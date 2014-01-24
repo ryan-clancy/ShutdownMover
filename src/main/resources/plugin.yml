@@ -1,0 +1,4 @@
+name: ShutdownMover
+main: com.rylinaux.shutdownmover.ShutdownMover
+version: 1.0.0
+author: rylinaux
