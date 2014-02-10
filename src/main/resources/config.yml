@@ -1,0 +1,15 @@
+###
+# The server players should be moved to when their current server is shutdown
+###
+server: hub
+
+###
+# Valid terms to determine if the kick message is a restart, or a (real) kick.
+###
+terms:
+  - closed
+  - closing
+  - restart
+  - restarting
+  - shutdown
+  - shutting
