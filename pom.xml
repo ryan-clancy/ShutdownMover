@@ -9,6 +9,7 @@
     <version>1.0.1</version>
 
     <build>
+        <finalName>ShutdownMover</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
