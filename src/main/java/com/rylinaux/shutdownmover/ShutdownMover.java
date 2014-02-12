@@ -30,13 +30,14 @@ public class ShutdownMover extends Plugin {
 
     @Override
     public void onEnable() {
-        
+
         config = new BungeeConfig(this);
 
         fallback = this.getProxy().getServerInfo(config.getConfig().getString("server"));
         terms = config.getConfig().getStringList("terms");
 
         this.getProxy().getPluginManager().registerListener(this, new ShutdownMoverListener(this));
+
     }
 
     @Override
