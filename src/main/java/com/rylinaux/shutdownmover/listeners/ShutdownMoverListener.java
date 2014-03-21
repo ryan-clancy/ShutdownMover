@@ -10,15 +10,20 @@ import net.md_5.bungee.api.event.ServerKickEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
 
+/**
+ * Listen for when players are kicked, send to fallback if applicable.
+ *
+ * @author rylinaux
+ */
 public class ShutdownMoverListener implements Listener {
 
     /**
-     * The instance of the plugin
+     * The instance of the plugin.
      */
     private final ShutdownMover plugin;
 
     /**
-     * Construct our object
+     * Construct our object.
      *
      * @param plugin the plugin instance
      */

@@ -5,16 +5,18 @@ import com.rylinaux.shutdownmover.listeners.ShutdownMoverListener;
 
 import java.util.List;
 
-import lombok.Getter;
-
 import net.md_5.bungee.api.config.ServerInfo;
 import net.md_5.bungee.api.plugin.Plugin;
 
-@Getter
+/**
+ * Move players to the fallback server on kick if the reason contains a valid term.
+ *
+ * @author rylinaux
+ */
 public class ShutdownMover extends Plugin {
 
     /**
-     * The fallback server for being kicked on restart.
+     * The fallback server to be kicked to.
      */
     private ServerInfo fallback;
 
@@ -23,15 +25,10 @@ public class ShutdownMover extends Plugin {
      */
     private List<String> terms;
 
-    /**
-     * The configuration for the plugin.
-     */
-    private BungeeConfig config;
-
     @Override
     public void onEnable() {
 
-        config = new BungeeConfig(this);
+        BungeeConfig config = new BungeeConfig(this);
 
         fallback = this.getProxy().getServerInfo(config.getConfig().getString("server"));
         terms = config.getConfig().getStringList("terms");
@@ -43,6 +40,24 @@ public class ShutdownMover extends Plugin {
     @Override
     public void onDisable() {
         this.getProxy().getPluginManager().unregisterListeners(this);
+    }
+
+    /**
+     * Returns the fallback server.
+     *
+     * @return the fallback server.
+     */
+    public ServerInfo getFallback() {
+        return fallback;
+    }
+
+    /**
+     * Returns the list of valid terms for fallback kicking.
+     *
+     * @return the list of valid terms for fallback kicking
+     */
+    public List<String> getTerms() {
+        return terms;
     }
 
 }

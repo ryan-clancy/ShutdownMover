@@ -23,22 +23,22 @@ import net.md_5.bungee.config.YamlConfiguration;
 public class BungeeConfig {
 
     /**
-     * Configuration provider we want for this config
+     * Configuration provider we want for this config.
      */
     private static final ConfigurationProvider provider = ConfigurationProvider.getProvider(YamlConfiguration.class);
 
     /**
-     * The plugin instance
+     * The plugin instance.
      */
     private final Plugin plugin;
 
     /**
-     * The file we're working with
+     * The file we're working with.
      */
     private final File file;
 
     /**
-     * The config
+     * The config.
      */
     private Configuration config;
 
